@@ -167,7 +167,7 @@ ${0}:precmd() {
         builtin zstyle -s :autocomplete: min-delay seconds ||
         (( seconds = 0.05 ))
 
-    (( seconds_delay = max( 0, seconds_delay - _autocomplete__overhead ) ))
+    (( seconds = max( 0, seconds - _autocomplete__overhead ) ))
 
     # Convert to 100ths of a second for `zselect -t`.
     # WORKAROUND: #441 Directly using $(( [#10] … max( … ) )) leads to 0 in Zsh 5.9, as the result
